@@ -99,6 +99,17 @@ pub fn camel_case_start(s: &str) -> StrIndex {
     last_index
 }
 
+/// Get the start indexes of all camel-case components of `s`
+///
+/// ```
+/// assert_eq!(camel_case_split("AbcDef"), vec![StrIndex::new(0, 0), StrIndex::new(3, 3)])
+/// assert_eq!(camel_case_split("AbcDef"), vec![StrIndex::new(0, 0), StrIndex::new(3, 3)])
+/// assert_eq!(camel_case_split("AbcDef"), vec![StrIndex::new(0, 0), StrIndex::new(3, 3)])
+/// ```
+pub fn camel_case_split(s: &str) -> Vec<StrIndex> {
+    unimplemented!();
+}
+
 /// Dealing with sting comparison can be complicated, this struct ensures that both the
 /// character and byte count are provided for correct indexing.
 #[derive(Debug, Default, PartialEq, Eq)]

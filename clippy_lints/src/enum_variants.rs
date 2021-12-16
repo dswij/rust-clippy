@@ -159,6 +159,7 @@ fn check_variant(cx: &LateContext<'_>, threshold: u64, def: &EnumDef<'_>, item_n
     let first = &def.variants[0].ident.name.as_str();
     let mut pre = &first[..str_utils::camel_case_until(&*first).byte_index];
     let mut post = &first[str_utils::camel_case_start(&*first).byte_index..];
+
     for var in def.variants {
         check_enum_start(cx, item_name, var);
         check_enum_end(cx, item_name, var);
@@ -168,6 +169,10 @@ fn check_variant(cx: &LateContext<'_>, threshold: u64, def: &EnumDef<'_>, item_n
         let pre_camel = str_utils::camel_case_until(pre).byte_index;
         pre = &pre[..pre_camel];
         while let Some((next, last)) = name[pre.len()..].chars().zip(pre.chars().rev()).next() {
+            // dbg!(pre);
+            // dbg!(name[pre.len()..].chars().zip(pre.chars().rev()));
+            // dbg!(next);
+            // dbg!(last);
             if next.is_numeric() {
                 return;
             }
