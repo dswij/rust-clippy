@@ -45,6 +45,15 @@ fn test_match(x: bool) -> bool {
     }
 }
 
+fn test_match_semicolon(x: bool) -> bool {
+    match x {
+        true => return false,
+        false => {
+            return true;
+        },
+    };
+}
+
 fn test_closure() {
     let _ = || {
         return true;
