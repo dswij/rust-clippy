@@ -44,4 +44,16 @@ impl Iterator for Counter {
     }
 }
 
+trait IterAlias {
+    type I;
+    fn iter(&self) -> Self::I;
+}
+
+impl IterAlias for () {
+    type I = std::vec::IntoIter<u8>;
+    fn iter(&self) -> Self::I {
+        unimplemented!()
+    }
+}
+
 fn main() {}
