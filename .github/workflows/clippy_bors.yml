@@ -1,10 +1,7 @@
 name: Clippy Test (bors)
 
-on:
-  push:
-    branches:
-      - auto
-      - try
+on: 
+  - push
 
 env:
   RUST_BACKTRACE: 1
