@@ -9,13 +9,13 @@ publish = false
 
 # One of the versions of winapi is only a dev dependency: allowed
 [dependencies]
-ctrlc = "=3.1.0"
+serde = "1.0.110"
 [dev-dependencies]
 ansi_term = "=0.11.0"
 
 # Both versions of winapi are a build dependency: allowed
 [build-dependencies]
-ctrlc = "=3.1.0"
+serde = "1.0.110"
 ansi_term = "=0.11.0"
 
 [lints.cargo]
